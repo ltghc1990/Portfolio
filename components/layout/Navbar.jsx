@@ -19,7 +19,7 @@ const Navbar = () => {
           <a
             onClick={() => selectedNav(1)}
             className={`p-2 border-2 border-white ${
-              active === 1 && "border-gray-900 bg-gray-600 text-white"
+              active === 1 && "border-gray-600 bg-gray-600 text-white"
             }`}
           >
             portfolio
@@ -29,7 +29,7 @@ const Navbar = () => {
           <a
             onClick={() => selectedNav(2)}
             className={`p-2 border-2 border-white ${
-              active === 2 && "border-gray-900 bg-gray-600 text-white"
+              active === 2 && "border-gray-600 bg-gray-600 text-white"
             }`}
           >
             about

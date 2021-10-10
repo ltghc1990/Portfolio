@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { childGridItemVariant } from "../lib/framerMotion";
 
 import Image from "next/image";
 
@@ -6,7 +8,7 @@ import Image from "next/image";
 
 const GridItem = ({ project }) => {
   return (
-    <div className="cursor-pointer">
+    <motion.div variants={childGridItemVariant} className="cursor-pointer">
       <a href={project.link}>
         <Image
           src={`/${project.image}`}
@@ -17,7 +19,7 @@ const GridItem = ({ project }) => {
         />
         <p className=" font-semibold ">{project.name}</p>
       </a>
-    </div>
+    </motion.div>
   );
 };
 
