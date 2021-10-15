@@ -1,15 +1,15 @@
 import Grid from "../components/Grid";
 import Header from "../components/Header";
-import Padding from "../components/padding";
+import Spacing from "../components/Spacing";
 
 export default function Home() {
   return (
     <div className="">
-      <Padding />
+      <Spacing />
       <Header />
-      <Padding />
+      <Spacing />
       <Grid />
-      <Padding />
+      <Spacing />
     </div>
   );
 }

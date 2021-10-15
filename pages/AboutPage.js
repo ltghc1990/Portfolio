@@ -1,10 +1,10 @@
 import React from "react";
-import Padding from "../components/padding";
+import Spacing from "../components/Spacing";
 
 const AboutPage = () => {
   return (
     <div>
-      <Padding />
+      <Spacing />
       <h2>{`:)`}</h2>
     </div>
   );

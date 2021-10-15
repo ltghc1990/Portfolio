@@ -1,12 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
+import { useRouter } from "next/router";
+
 const Navbar = () => {
-  // problem where if we bookmark a different page and go to it, it'll still highlight portfolio due to it being a click event
-  const [active, setActive] = useState(1);
+  const { route } = useRouter();
+
+  const [active, setActive] = useState(null);
+
+  // load selected nav depending on the bookmarked page
+  useEffect(() => {
+    if (route === "/") {
+      setActive(1);
+    } else {
+      setActive(2);
+    }
+  }, [route]);
+
+  // if route is a depency, then we might not need the selectedNav <--- TEST
 
   const selectedNav = (NavId) => {
-    console.log("click");
+    console.log(NavId);
     setActive(NavId);
   };
 
@@ -18,7 +32,7 @@ const Navbar = () => {
       <nav className="">
         <Link href="/">
           <a
-            onClick={() => selectedNav(1)}
+            // onClick={() => selectedNav(1)}
             className={`p-2 border-2 border-white ${
               active === 1 && "border-gray-600 bg-gray-600 text-white"
             }`}
@@ -28,7 +42,7 @@ const Navbar = () => {
         </Link>
         <Link href="/AboutPage">
           <a
-            onClick={() => selectedNav(2)}
+            // onClick={() => selectedNav(2)}
             className={`p-2 border-2 border-white ${
               active === 2 && "border-gray-600 bg-gray-600 text-white"
             }`}
