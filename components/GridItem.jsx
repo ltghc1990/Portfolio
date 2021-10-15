@@ -1,14 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { childGridItemVariant } from "../lib/framerMotion";
+import { childGridItemVariant, gridItemHover } from "../lib/framerMotion";
 
 import Image from "next/image";
 
-// gets stuff from grids which we can then display
+// gets stuff from grid which we can then display
 
 const GridItem = ({ project }) => {
   return (
-    <motion.div variants={childGridItemVariant} className="cursor-pointer">
+    <motion.div
+      variants={childGridItemVariant}
+      whileHover={gridItemHover}
+      className="cursor-pointer"
+    >
       <a href={project.link}>
         <Image
           src={`/${project.image}`}
@@ -17,7 +21,7 @@ const GridItem = ({ project }) => {
           objectFit="cover"
           alt={"image description"}
         />
-        <p className=" font-semibold ">{project.name}</p>
+        <p className="font-semibold">{project.name}</p>
       </a>
     </motion.div>
   );

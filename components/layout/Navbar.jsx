@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 const Navbar = () => {
+  // problem where if we bookmark a different page and go to it, it'll still highlight portfolio due to it being a click event
   const [active, setActive] = useState(1);
 
   const selectedNav = (NavId) => {
@@ -10,9 +11,9 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex font-semibold justify-between py-4">
+    <div className="flex justify-between py-4 font-semibold">
       <div>
-        <div>Howell Chen</div>
+        <div className="font-Playfair">Howell Chen</div>
       </div>
       <nav className="">
         <Link href="/">
